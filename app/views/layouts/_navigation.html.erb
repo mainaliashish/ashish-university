@@ -3,6 +3,9 @@
         <% if(logged_in?) %>
         <li><%= link_to "My profile", student_path(current_user) %></li>
         <% end %>
+        <% if(!logged_in?) %>
+        <li><%= link_to "Sign up", new_student_path %></li>
+        <% end %>
         <li><%= session_link %></li>
         <li class="divider"></li>
         <li><a href="#!">three</a></li>
