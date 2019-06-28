@@ -6,12 +6,12 @@
 
  <div class="row">
  	<% Course.all.each do |course| %>
-    <div class="col s6 m6 custom-style">
+    <div class="col s6 custom-style">
       <div class="card teal darken-1">
         <div class="card-content white-text">
           <span class="card-title"><%= course.short_name %>: <%= course.name %></span>
           <p>
-          <%= truncate(course.description, length: 150, omission: ' ...') %> </p>
+          <%= truncate(course.description, length: 120, omission: ' ...') %> </p>
         </div>
         <div class="card-action">
           <% if (logged_in?) && (!current_user.courses.include?(course)) %>
